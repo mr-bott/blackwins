@@ -1,5 +1,5 @@
 function fetchUser() {
-  return new Promise((resolve,reject) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       reject({ name: "murali", age: 21 });
     }, 2000);
@@ -27,13 +27,13 @@ async function getDetailsAll() {
     const [user, role, money] = await Promise.all([
       fetchUser(),
       fetchRole(),
-      fetchMoney()
+      fetchMoney(),
     ]);
-      console.log("Promise all " ,user, role, money);
-      console.log();
+    console.log("Promise all ", user, role, money);
+    console.log();
   } catch (e) {
-    console.log("Error while fetching" ,e);
-     console.log();
+    console.log("Error while fetching", e);
+    console.log();
   }
 }
 
@@ -44,10 +44,10 @@ async function getDetails() {
     const [user, role, money] = await Promise.allSettled([
       fetchUser(),
       fetchRole(),
-      fetchMoney()
+      fetchMoney(),
     ]);
-      console.log("Promise all settled " ,user, role, money);
-      console.log();
+    console.log("Promise all settled ", user, role, money);
+    console.log();
   } catch (e) {
     console.log(e);
   }
@@ -55,36 +55,24 @@ async function getDetails() {
 
 getDetails();
 
-
 async function getDetailsrace() {
   try {
-    const one = await Promise.race([
-      fetchUser(),
-      fetchRole()
-    ]);
-      console.log("Promise race" ,one);
-      console.log();
+    const one = await Promise.race([fetchUser(), fetchRole()]);
+    console.log("Promise race", one);
+    console.log();
   } catch (e) {
     console.log(e);
   }
 }
 getDetailsrace();
 
-
 async function getDetailsAny() {
   try {
-    const one = await Promise.any([
-      fetchUser(),
-      fetchRole(),
-      fetchMoney()
-    ]);
-      console.log("Promise any" ,one);
-      console.log();
+    const one = await Promise.any([fetchUser(), fetchRole(), fetchMoney()]);
+    console.log("Promise any", one);
+    console.log();
   } catch (e) {
     console.log(e);
   }
 }
 getDetailsAny();
-
-
-

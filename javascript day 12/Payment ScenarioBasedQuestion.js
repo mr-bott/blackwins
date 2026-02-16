@@ -14,7 +14,6 @@ function fetchTimeout(){
     });
 }
 
-
 async function processPayment(){
   try{
      const result=await Promise.race([

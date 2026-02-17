@@ -1,0 +1,3 @@
+Something to test the fs module in the 
+nodejs , and also im learning the fs module for the first time 
+i never used in my projects.

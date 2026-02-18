@@ -1,11 +1,12 @@
 const {Pool}=require('pg');
+const env=require('./env')
 
 const pool=new Pool({
-    user:process.env.USER,
-    host:process.env.HOST,
-    database:process.env.DATABASE,
-    password:process.env.PASSWORD,
-    port:process.env.DB_PORT
+    user: env.USER,
+    host: env.HOST,
+    database: env.DATABASE,
+    password: env.PASSWORD,
+    port: env.DB_PORT
 })
 
 async function connectDB() {

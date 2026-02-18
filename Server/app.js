@@ -1,9 +1,11 @@
-const express=require('express');
-require('dotenv').config();
-const{connectDB} =require("./config/db")
-const authRoutes=require('./routes/auth.routes')
+const express = require("express");
+require("dotenv").config();
+const { connectDB } = require("./config/db");
+const env = require("./config/env");
+const authRoutes = require("./routes/auth.routes");
+const categoryRoutes=require("./routes/category.routes")
 
-const app=express();
+const app = express();
 
 app.use(express.json());
 
@@ -11,9 +13,11 @@ app.use(express.json());
 connectDB();
 
 //AuthRoutes
-app.use('/api',authRoutes);
+app.use("/api", authRoutes);
+app.use("/category",categoryRoutes);
 
-const PORT=process.env.PORT;
-app.listen(PORT,()=>{  //port Access
-    console.log(`Server running on port ${PORT} `)
-})
+const PORT = env.PORT;
+app.listen(PORT, () => {
+  //port Access
+  console.log(`Server running on port ${PORT} `);
+});

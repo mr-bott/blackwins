@@ -6,10 +6,11 @@
 
 // const filePath=path.join(__dirname,'files','inputFile.txt');
 
-// const readedContent=fs.readFile(filePath,'utf-8',(error,data)=>{ // doubt 
+// fs.readFile(filePath,'utf-8',(error,data)=>{ // doubt 
 //   console.log(data);
 //   console.log("completed");
-//   fs.writeFile(path.join(__dirname,'files','newFile.txt'),readedContent,(error,data)=>{
+
+//   fs.writeFile(path.join(__dirname,'files','newFile.txt'),data,(error,data)=>{
 //     console.log("writed New File");
     
 //   })
@@ -58,3 +59,5 @@ async function appendDeleteFile(){
 }
 
 appendDeleteFile();
+
+//copy file , extreact name , 

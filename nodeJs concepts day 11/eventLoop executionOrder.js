@@ -18,7 +18,7 @@ fs.readFile('./Files/input.txt', () => {
 
   //higher priority
   process.nextTick(() => {
-    console.log('Process.nextTick callback executed');
+    console.log('Process.nextTick callback executed'); //micro and macro task queus
   });
 });
 

@@ -12,3 +12,6 @@ console.log(path.extname(__filename)); //extension name
 console.log(path.parse(__dirname));
 
 console.log(path.join(__dirname,"files","output.txt"));//create new path 
+
+console.log(__dirname.split(path.sep));
+
